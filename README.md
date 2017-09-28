@@ -2,8 +2,15 @@
 FreeCodeCamp: Use the Twitchtv JSON API
 
 - - -
-
+[![license](https://img.shields.io/github/license/shgysk8zer0/freecodecamp-twitch.svg)](./LICENSE)
 [![Build Status](https://travis-ci.org/shgysk8zer0/freecodecamp-twitch.svg?branch=master)](https://travis-ci.org/shgysk8zer0/freecodecamp-twitch)
+[![GitHub issues](https://img.shields.io/github/issues/shgysk8zer0/freecodecamp-twitch.svg)](https://github.com/shgysk8zer0/freecodecamp-twitch/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/shgysk8zer0/freecodecamp-twitch.svg)](https://github.com/shgysk8zer0/freecodecamp-twitch/pulls)
+
+[![GitHub stars](https://img.shields.io/github/stars/shgysk8zer0/freecodecamp-twitch.svg?style=social)](https://github.com/shgysk8zer0/freecodecamp-twitch/stargazers)
+[![GitHub followers](https://img.shields.io/github/followers/shgysk8zer0.svg?style=social&label=Follow)](https://github.com/shgysk8zer0)
+[![Twitter Follow](https://img.shields.io/twitter/follow/shgysk8zer0.svg?style=social&label=Follow)](https://twitter.com/shgysk8zer0)
+[![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=shgysk8zer0%2Fawesome-rss%3A%20Puts%20an%20RSS%2FAtom%20subscribe%20button%20back%20in%20URL%20bar&url=https%3A%2F%2Fgithub.com%2Fshgysk8zer0%2Fawesome-rss&original_referer=)
 
 1. [ ] Objective: Build a [CodePen.io](https://codepen.io/) app that is
 functionally similar to this: https://codepen.io/FreeCodeCamp/full/Myvqmo/
