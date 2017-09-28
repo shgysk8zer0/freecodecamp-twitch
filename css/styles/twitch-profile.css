@@ -1,0 +1,11 @@
+.twitch-profile {
+	transition: filter 400ms;
+}
+
+.twitch-profile.offline:not(:hover) {
+	filter: grayscale(1);
+}
+
+.twitch-profile a {
+	color: inherit;
+}

@@ -6,6 +6,22 @@
 		<script type="module" src="js/index.js" async=""></script>
 		<script type="application/javascript" src="js/index.min.js" async=""></script>
 		<link rel="stylesheet" href="css/styles/index.css" media="screen" />
+		<link rel="icon" href="img/logos/freecodecamp.svg" sizes="any" type="image/svg+xml" />
 	</head>
-	<body class="no-js"></body>
+	<body class="no-js">
+		<header></header>
+		<main>
+			<div class="twitch-list"></div>
+		</main>
+		<aside></aside>
+		<footer></footer>
+		<template id="user-template">
+			<div class="twitch-profile offline" data-twitch-id="">
+				<img src="" width="48" height="48" data-prop="logo" />
+				<a data-prop="link" href="" class="no-text-decoration">
+					<b data-prop="display_name"></b>
+				</a>
+			</div>
+		</template>
+	</body>
 </html>

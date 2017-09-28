@@ -3,6 +3,8 @@ FreeCodeCamp: Use the Twitchtv JSON API
 
 - - -
 
+[![Build Status](https://travis-ci.org/shgysk8zer0/freecodecamp-twitch.svg?branch=master)](https://travis-ci.org/shgysk8zer0/freecodecamp-twitch)
+
 1. [ ] Objective: Build a [CodePen.io](https://codepen.io/) app that is
 functionally similar to this: https://codepen.io/FreeCodeCamp/full/Myvqmo/
 2. [ ] Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story).
