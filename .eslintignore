@@ -1,0 +1,7 @@
+*.config.js
+/node_modules/
+/img/
+/css/
+/js/std-js/
+*.min.js
+*.config.js
