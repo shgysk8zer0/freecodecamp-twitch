@@ -1,0 +1,25 @@
+:root {
+
+	/*================= Set color vars here =================*/
+	--default-color: #010101;
+	--alt-color: whitesmoke;
+	--primary-color: #FAFAFA;
+	--highlight-color: #811717;
+	--link-color: #2B75BA;
+	--visited-color: #551A8B;
+	--border-color: #2D2D2D;
+
+	/*========== Set background images, etc here ==========*/
+	--mountains-full : url("../../img/anderson.jpg");
+	--mountains-l: url("../../img/anderson-1200.jpg");
+	--mountains-m: url("../../img/anderson-800.jpg");
+	--mountains-s: url("../../img/anderson-420.jpg");
+	--nav-height: 2.5rem;
+
+	/*==================== Set fonts here ====================*/
+	--main-font: 'Roboto';
+	--title-font: 'Acme';
+	--header-font: 'Alice';
+	--article-font: 'Ubuntu';
+	--article-header-font: var(--header-font);
+}
