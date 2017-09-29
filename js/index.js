@@ -1,3 +1,4 @@
+import './shims.js';
 import {$} from './std-js/functions.js';
 import Twitch from './Twitch.js';
 import {userList, twitchUrl} from './consts.js';
@@ -18,9 +19,11 @@ $(self).ready(async () => {
 		}
 	});
 
-	$('[data-show]').click(click => $('[data-visible]').each(el => {
-		el.dataset.visible = click.target.dataset.show;
-	}));
+	$('[data-show]').click(function() {
+		$('[data-visible]').each(el => {
+			el.dataset.visible = this.dataset.show;
+		});
+	});
 
 	const list = document.querySelector('.twitch-list');
 	const users = await Twitch.getUsers(...userList);
