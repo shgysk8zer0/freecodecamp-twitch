@@ -21,7 +21,6 @@
 	padding: 1.3rem;
 	transform-origin: top;
 	transition: filter 400ms, transform 600ms, opacity 600ms;
-	animation: flip-up 800ms ease-in;
 	order: 0;
 }
 

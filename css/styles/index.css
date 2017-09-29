@@ -24,7 +24,7 @@
 body {
 	margin: 0;
 	max-width: 100%;
-	grid-template-rows: 20vh 4vh minmax(56vh, auto) minmax(20vh, auto);
+	grid-template-rows: minmax(20vh, auto) 4vh minmax(56vh, auto) minmax(20vh, auto);
 	grid-template-columns: 1fr 8fr 1fr;
 	grid-template-areas: 'header header header'
 	'nav nav nav'

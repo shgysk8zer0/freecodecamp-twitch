@@ -18,3 +18,9 @@ button[type="reset"] {
 	background: none;
 	border: none;
 }
+
+@media (max-width: 800px) {
+	form {
+		display: none;
+	}
+}

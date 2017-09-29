@@ -33,7 +33,7 @@
 				<input type="search" name="user" pattern="\w*" placeholder="Username" list="twitch-list" />
 				<datalist id="twitch-list"></datalist>
 				<button type="reset">
-					<svg class="icon currentColor">
+					<svg class="icon current-color">
 						<use xlink:href="img/icons.svg#clear" />
 					</svg>
 				</button>
@@ -85,7 +85,7 @@
 			</a>
 		</footer>
 		<template id="user-template">
-			<div class="twitch-profile offline card shadow" data-twitch-id="">
+			<div class="twitch-profile offline card shadow" data-twitch-id="" hidden="">
 				<a data-prop="link" href="" target="_blank" class="no-text-decoration">
 					<span class="status round">
 						<img src="" class="round" width="48" height="48" data-prop="logo" />

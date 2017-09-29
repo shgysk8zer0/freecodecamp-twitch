@@ -27,7 +27,7 @@ $(self).ready(async () => {
 	const template = document.getElementById('user-template').content;
 	const datalist = document.getElementById('twitch-list');
 
-	users.forEach(user => {
+	const promises = users.map(async user => {
 		const entry = template.cloneNode(true);
 		const opt = document.createElement('option');
 		opt.value = user.display_name;
@@ -52,16 +52,37 @@ $(self).ready(async () => {
 			}
 		});
 
-		Twitch.getStream(user.name).then(async data => {
-			if (data.stream instanceof Object) {
-				$('.offline', entry).replaceClass('offline', 'online');
-				$('[data-prop="status-msg"]', entry).each(node => {
-					node.textContent = data.stream.channel.status;
-				});
-				list.append(entry);
-			} else {
-				list.append(entry);
-			}
-		});
+		const data = await Twitch.getStream(user.name);
+		if (data.stream instanceof Object) {
+			$('.offline', entry).replaceClass('offline', 'online');
+			$('[data-prop="status-msg"]', entry).each(node => {
+				node.textContent = data.stream.channel.status;
+			});
+			list.append(entry);
+		} else {
+			list.append(entry);
+		}
 	});
+
+	await Promise.all(promises);
+	if (Element.prototype.hasOwnProperty('animate')) {
+		$('.twitch-profile').each((profile, index) => {
+			profile.animate([
+				{
+					transform: 'scale(0) translateX(-50vw) translateY(50vh)',
+					opacity: 0,
+				},{
+					transform: 'none',
+					opacity: 1,
+				},
+			], {
+				duration: 800,
+				delay: index * 100,
+				fill: 'backwards',
+			});
+			profile.hidden = false;
+		});
+	} else {
+		$('.twitch-profile').unhide();
+	}
 }, {once: true});
