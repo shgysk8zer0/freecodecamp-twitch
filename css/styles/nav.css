@@ -5,3 +5,16 @@ body > nav {
 	z-index: 1;
 	box-shadow: 0 5px 5px rgba(0,0,0,0.7);
 }
+
+input[type="search"] {
+	background: transparent;
+	border: none;
+	border-bottom: 2px solid currentColor;
+	color: var(--primary-color);
+}
+
+button[type="reset"] {
+	color: var(--primary-color);
+	background: none;
+	border: none;
+}

@@ -4,8 +4,8 @@ body > header {
 }
 
 header svg {
-	width: 20vmin;
-	height: 20vmin;
+	width: 15vh;
+	height: 15vh;
 	animation: wobble 800ms infinite alternate ease-in-out;
 }
 
@@ -13,7 +13,7 @@ header svg {
 	from {
 		transform: rotate(-.05turn);
 	}
-	
+
 	to {
 		transform: rotate(.05turn);
 	}

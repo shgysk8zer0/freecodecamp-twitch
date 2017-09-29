@@ -4,6 +4,19 @@ import {userList, twitchUrl} from './consts.js';
 
 $(self).ready(async () => {
 	document.body.classList.replace('no-js', 'js');
+	const $form = $('form');
+
+	$form.submit(submit => submit.preventDefault());
+
+	$form.reset(() => $('[data-twitch-user]').unhide());
+
+	$('input[type="search"]').input(input => {
+		if (! input.target.validity.badInput) {
+			$('[data-twitch-user]').each(user => {
+				user.hidden = ! user.dataset.twitchUser.toLowerCase().includes(input.target.value.toLowerCase());
+			});
+		}
+	});
 
 	$('[data-show]').click(click => $('[data-visible]').each(el => {
 		el.dataset.visible = click.target.dataset.show;
@@ -12,10 +25,16 @@ $(self).ready(async () => {
 	const list = document.querySelector('.twitch-list');
 	const users = await Twitch.getUsers(...userList);
 	const template = document.getElementById('user-template').content;
+	const datalist = document.getElementById('twitch-list');
 
 	users.forEach(user => {
 		const entry = template.cloneNode(true);
+		const opt = document.createElement('option');
+		opt.value = user.display_name;
+		datalist.append(opt);
 
+		entry.firstElementChild.dataset.twitchUser = user.display_name;
+		entry.firstElementChild.dataset.twitchId = user._id;
 		$('[data-prop="display_name"]', entry).each(node => {
 			node.textContent = user.display_name;
 		});
@@ -31,10 +50,6 @@ $(self).ready(async () => {
 				$('[data-prop="logo"] + .avatar-default', entry).unhide();
 				node.remove();
 			}
-		});
-
-		$('[data-twitch-id]', entry).each(node => {
-			node.dataset.twitchId = user._id;
 		});
 
 		Twitch.getStream(user.name).then(async data => {
