@@ -18,21 +18,25 @@
 			</a>
 		</header>
 		<nav class="sticky flex row background-alt color-primary">
-			<button type="button" data-show="all">All</button>
-			<button type="button" data-show="online" title="Online">
+			<button type="button" data-show="all" class="border-none background-none color-primary big">
+				<svg class="icon current-color">
+					<use xlink:href="img/icons.svg#select-all" />
+				</svg>
+			</button>
+			<button type="button" data-show="online" title="Online" class="border-none background-none color-primary big">
 				<svg class="icon current-color">
 					<use xlink:href="img/icons.svg#online" />
 				</svg>
 			</button>
-			<button type="button" data-show="offline" title="Offline">
+			<button type="button" data-show="offline" title="Offline" class="border-none background-none color-primary big">
 				<svg class="icon current-color">
 					<use xlink:href="img/icons.svg#offline" />
 				</svg>
 			</button>
 			<form name="filter" autocomplete="off">
-				<input type="search" name="user" pattern="\w*" placeholder="Username" list="twitch-list" />
+				<input type="search" name="user" pattern="\w*" placeholder="Username" list="twitch-list" class="background-none border-none color-primary"/>
 				<datalist id="twitch-list"></datalist>
-				<button type="reset">
+				<button type="reset" class="big background-none border-none color-primary">
 					<svg class="icon current-color">
 						<use xlink:href="img/icons.svg#clear" />
 					</svg>
