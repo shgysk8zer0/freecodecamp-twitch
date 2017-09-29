@@ -9,6 +9,6 @@ export const userList = [
 	'storbeck',
 ];
 
-export const defaultAvatar = 'img/adwaita-icons/status/avatar-default.svg';
+export const defaultAvatar = 'img/icons.svg#avatar';
 
 export const twitchUrl = 'https://www.twitch.tv/';

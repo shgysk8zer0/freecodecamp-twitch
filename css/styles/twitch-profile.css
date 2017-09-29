@@ -1,5 +1,42 @@
+.twitch-list {
+	padding: 2rem;
+	justify-content: center;
+}
+
+.twitch-list[data-visible="offline"] .twitch-profile.online {
+	transform: rotateX(90deg);
+	opacity: 0;
+	order: 2;
+}
+
+.twitch-list[data-visible="online"] .twitch-profile.offline {
+	transform: rotateX(90deg);
+	opacity: 0;
+	order: 2;
+}
+
 .twitch-profile {
-	transition: filter 400ms;
+	flex-basis: 75%;
+	margin-top: 0.6rem;
+	transform-origin: top;
+	transition: filter 400ms, transform 600ms, opacity 600ms;
+	animation: flip-up 800ms ease-in;
+	order: 0;
+}
+
+.twitch-profile.offline {
+	order: 1;
+}
+
+.twitch-profile .status {
+	display: inline-block;
+	padding: 0.9em;
+	transition: background-color 400ms;
+	background-color: var(--online-color);
+}
+
+.twitch-profile.offline .status {
+	background-color: var(--offline-color);
 }
 
 .twitch-profile.offline:not(:hover) {
@@ -8,4 +45,11 @@
 
 .twitch-profile a {
 	color: inherit;
+}
+
+@keyframes flip-up {
+	from {
+		transform: rotateX(90deg);
+		opacity: 0;
+	}
 }

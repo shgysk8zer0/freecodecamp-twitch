@@ -6,3 +6,19 @@
 @import url("../core-css/dialog.css");
 @import url("../core-css/class_rules.css");
 @import url("./twitch-profile.css");
+@import url("../core-css/animations.css");
+@import url("./header.css");
+@import url("./nav.css");
+@import url("./footer.css");
+
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+
+.color-twitch {
+	color: var(--twitch-purple);
+}
+
+.flex.row > hr {
+	flex-basis: 100%;
+}
