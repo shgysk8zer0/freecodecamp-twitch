@@ -1,6 +1,6 @@
 import {$} from './std-js/functions.js';
 import Twitch from './Twitch.js';
-import {userList, defaultAvatar, twitchUrl} from './consts.js';
+import {userList, twitchUrl} from './consts.js';
 
 $(self).ready(async () => {
 	document.body.classList.replace('no-js', 'js');
@@ -13,12 +13,9 @@ $(self).ready(async () => {
 	const users = await Twitch.getUsers(...userList);
 	const template = document.getElementById('user-template').content;
 
-	if (! list.matches(':empty')) {
-		return;
-	}
-
 	users.forEach(user => {
 		const entry = template.cloneNode(true);
+
 		$('[data-prop="display_name"]', entry).each(node => {
 			node.textContent = user.display_name;
 		});
@@ -28,14 +25,11 @@ $(self).ready(async () => {
 		});
 
 		$('[data-prop="logo"]', entry).each(node => {
-			if (user.logo instanceof String) {
+			if (typeof(user.logo) === 'string') {
 				node.src = user.logo;
 			} else {
-				const svg = document.createElement('svg');
-				const use = document.createElement('use');
-				svg.appendChild(use);
-				use.setAttribute('xlink:href', defaultAvatar);
-				node.replaceWith(svg);
+				$('[data-prop="logo"] + .avatar-default', entry).unhide();
+				node.remove();
 			}
 		});
 
@@ -43,6 +37,16 @@ $(self).ready(async () => {
 			node.dataset.twitchId = user._id;
 		});
 
-		list.append(entry);
+		Twitch.getStream(user.name).then(async data => {
+			if (data.stream instanceof Object) {
+				$('.offline', entry).replaceClass('offline', 'online');
+				$('[data-prop="status-msg"]', entry).each(node => {
+					node.textContent = data.stream.channel.status;
+				});
+				list.append(entry);
+			} else {
+				list.append(entry);
+			}
+		});
 	});
 }, {once: true});

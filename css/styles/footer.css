@@ -1,4 +1,9 @@
 body > footer {
+	grid-area: footer;
 	padding: 1rem;
 	justify-content: space-around;
+}
+
+footer .icon {
+	font-size: 4rem;
 }

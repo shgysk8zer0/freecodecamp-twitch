@@ -2,8 +2,9 @@
 
 	/*================= Set color vars here =================*/
 	--default-color: #010101;
-	--alt-color: whitesmoke;
-	--primary-color: #6441A4;
+	--alt-color: #6441A4;
+	--primary-color: #fafafa;
+	--primary-color-compliment: #F0DC50;
 	--highlight-color: #444;
 	--link-color: #2B75BA;
 	--visited-color: #551A8B;

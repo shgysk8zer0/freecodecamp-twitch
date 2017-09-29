@@ -1,3 +1,7 @@
 body > nav {
-	height: var(--nav-hieght);
+	grid-area: nav;
+	height: var(--nav-height);
+	justify-content: space-evenly;
+	z-index: 1;
+	box-shadow: 0 5px 5px rgba(0,0,0,0.7);
 }

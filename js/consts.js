@@ -6,7 +6,6 @@ export const userList = [
 	'habathcx',
 	'RobotCaleb',
 	'noobs2ninjas',
-	'storbeck',
 ];
 
 export const defaultAvatar = 'img/icons.svg#avatar';

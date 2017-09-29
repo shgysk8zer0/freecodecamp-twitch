@@ -1,5 +1,7 @@
 .twitch-list {
 	padding: 2rem;
+	grid-template-columns: repeat(auto-fill, minmax(auto, 400px));
+	grid-gap: 0.7em;
 	justify-content: center;
 }
 
@@ -16,8 +18,7 @@
 }
 
 .twitch-profile {
-	flex-basis: 75%;
-	margin-top: 0.6rem;
+	padding: 1.3rem;
 	transform-origin: top;
 	transition: filter 400ms, transform 600ms, opacity 600ms;
 	animation: flip-up 800ms ease-in;
@@ -28,8 +29,12 @@
 	order: 1;
 }
 
+.twitch-profile.offline [data-prop="status-msg"] {
+	color: var(--offline-color);
+}
+
 .twitch-profile .status {
-	display: inline-block;
+	display: inline-flex;
 	padding: 0.9em;
 	transition: background-color 400ms;
 	background-color: var(--online-color);
