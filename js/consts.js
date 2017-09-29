@@ -6,9 +6,8 @@ export const userList = [
 	'habathcx',
 	'RobotCaleb',
 	'noobs2ninjas',
-	'storbeck',
 ];
 
-export const defaultAvatar = 'img/adwaita-icons/status/avatar-default.svg';
+export const defaultAvatar = 'img/icons.svg#avatar';
 
 export const twitchUrl = 'https://www.twitch.tv/';

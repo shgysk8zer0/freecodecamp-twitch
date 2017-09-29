@@ -3,65 +3,105 @@
 	<head>
 		<title>Twitch.tv JSON API</title>
 		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
 		<script type="module" src="js/index.js" async=""></script>
-		<script type="application/javascript" src="js/index.min.js" async=""></script>
+		<script type="application/javascript" src="js/index.min.js" async="" nomodule=""></script>
 		<link rel="stylesheet" href="css/styles/index.css" media="screen" />
 		<link rel="icon" href="img/logos/freecodecamp.svg" sizes="any" type="image/svg+xml" />
 	</head>
-	<body class="no-js">
-		<header></header>
-		<main>
-			<div class="twitch-list"></div>
-		</main>
+	<body class="no-js grid background-primary color-default border-box">
+		<header class="background-highlight color-primary">
+			<a href="https://www.twitch.tv" target="_blank" title="Twitch" class="no-text-decoration">
+				<svg class="current-color color-primary" data-filter="drop-shadow">
+					<use xlink:href="img/icons.svg#twitch" />
+				</svg>
+			</a>
+		</header>
+		<nav class="sticky flex row background-alt color-primary">
+			<button type="button" data-show="all" class="border-none background-none color-primary big">
+				<svg class="icon current-color">
+					<use xlink:href="img/icons.svg#select-all" />
+				</svg>
+			</button>
+			<button type="button" data-show="online" title="Online" class="border-none background-none color-primary big">
+				<svg class="icon current-color">
+					<use xlink:href="img/icons.svg#online" />
+				</svg>
+			</button>
+			<button type="button" data-show="offline" title="Offline" class="border-none background-none color-primary big">
+				<svg class="icon current-color">
+					<use xlink:href="img/icons.svg#offline" />
+				</svg>
+			</button>
+			<form name="filter" autocomplete="off">
+				<input type="search" name="user" pattern="\w*" placeholder="Username" list="twitch-list" class="background-none border-none color-primary"/>
+				<datalist id="twitch-list"></datalist>
+				<button type="reset" class="big background-none border-none color-primary">
+					<svg class="icon current-color">
+						<use xlink:href="img/icons.svg#clear" />
+					</svg>
+				</button>
+			</form>
+		</nav>
+		<main class="background-primary shadow-dark grid twitch-list" data-visible="all"></main>
 		<aside></aside>
 		<footer class="background-highlight color-alt flex row wrap">
 			<a href="https://github.com/shgysk8zer0">
-				<svg width="48" height="48">
+				<svg width="48" height="48" class="icon">
 					<use xlink:href="img/icons.svg#mark-github" />
 				</svg>
 			</a>
 			<a href="https://github.com/shgysk8zer0/freecodecamp-twitch">
-				<svg width="48" height="48">
+				<svg width="48" height="48" class="icon">
 					<use xlink:href="img/icons.svg#repo" />
 				</svg>
 			</a>
 			<a href="https://github.com/shgysk8zer0/freecodecamp-twitch/issues">
-				<svg width="48" height="48">
+				<svg width="48" height="48" class="icon">
 					<use xlink:href="img/icons.svg#issues" />
 				</svg>
 			</a>
 			<hr />
 			<a href="https://twitter.com/shgysk8zer0">
-				<svg width="48" height="48">
+				<svg width="48" height="48" class="icon">
 					<use xlink:href="img/icons.svg#twitter" />
 				</svg>
 			</a>
 			<a href="https://www.linkedin.com/in/chris-zuber-455346141/">
-				<svg width="48" height="48">
+				<svg width="48" height="48" class="icon">
 					<use xlink:href="img/icons.svg#linkedin" />
 				</svg>
 			</a>
 			<a href="https://reddit.com/user/shgysk8zer0">
-				<svg width="48" height="48">
+				<svg width="48" height="48" class="icon">
 					<use xlink:href="img/icons.svg#reddit" />
 				</svg>
 			</a>
 			<a href="https://plus.google.com/+ChrisZuber">
-				<svg width="48" height="48">
+				<svg width="48" height="48" class="icon">
 					<use xlink:href="img/icons.svg#google+" />
 				</svg>
 			</a>
 			<a href="https://www.freecodecamp.org/shgysk8zer0">
-				<svg width="48" height="48">
+				<svg width="48" height="48" class="icon">
 					<use xlink:href="img/icons.svg#free-code-camp" />
 				</svg>
 			</a>
 		</footer>
 		<template id="user-template">
-			<div class="twitch-profile offline" data-twitch-id="">
-				<img src="" width="48" height="48" data-prop="logo" />
-				<a data-prop="link" href="" class="no-text-decoration">
-					<b data-prop="display_name"></b>
+			<div class="twitch-profile offline card shadow" data-twitch-id="" hidden="">
+				<a data-prop="link" href="" target="_blank" class="no-text-decoration">
+					<span class="status round">
+						<img src="" class="round" width="48" height="48" data-prop="logo" />
+						<span class="avatar-default" hidden="">
+							<svg width="48" height="48">
+								<use xlink:href="img/icons.svg#avatar" />
+							</svg>
+						</span>
+					</span>
+					<b data-prop="display_name" class="right"></b>
+					<hr />
+					<B data-prop="status-msg">Offline</b>
 				</a>
 			</div>
 		</template>

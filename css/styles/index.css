@@ -1,8 +1,87 @@
 @charset "UTF-8";
 @import url("../core-css/viewport.css");
-@import url("../normalize/normalize.css");
+@import url("./rem.css");
 @import url("./vars.css");
 @import url("../core-css/details.css");
 @import url("../core-css/dialog.css");
 @import url("../core-css/class_rules.css");
+@import url("../core-css/data-filter.css");
 @import url("./twitch-profile.css");
+@import url("../core-css/animations.css");
+@import url("./header.css");
+@import url("./nav.css");
+@import url("./main.css");
+@import url("./footer.css");
+
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+
+:root {
+	max-width: 100vw;
+}
+
+body {
+	margin: 0;
+	max-width: 100%;
+	grid-template-rows: minmax(20vh, auto) 4vh minmax(56vh, auto) minmax(20vh, auto);
+	grid-template-columns: 1fr 8fr 1fr;
+	grid-template-areas: 'header header header'
+	'nav nav nav'
+	'. main .'
+	'footer footer footer';
+}
+@media screen and (max-width: 800px) {
+	body {
+		grid-template-rows: auto auto auto auto;
+		grid-template-columns: auto;
+		grid-template-areas: 'header'
+		'nav'
+		'main'
+		'footer';
+	}
+}
+
+.color-twitch {
+	color: var(--twitch-purple);
+}
+
+.flex.row > hr {
+	flex-basis: 100%;
+}
+
+.color-compliment {
+	color: var(--primary-color-compliment);
+}
+
+.background-compliment {
+	background-color: var(--primary-color-compliment);
+}
+
+.sticky {
+	top: 0;
+}
+
+.icon {
+	transition: transform 600ms ease-in-out;
+}
+
+.icon:hover {
+	transform: rotateY(1turn) scale(1.2);
+}
+
+.color-inherit {
+	color: inherit;
+}
+
+.background-none {
+	background: none;
+}
+
+.border-none {
+	border: none;
+}
+
+button, [type="buton"] {
+	cursor: pointer;
+}

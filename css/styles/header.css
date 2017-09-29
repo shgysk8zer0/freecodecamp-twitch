@@ -1,0 +1,20 @@
+body > header {
+	grid-area: header;
+	padding: 2rem;
+}
+
+header svg {
+	width: 15vh;
+	height: 15vh;
+	animation: wobble 800ms infinite alternate ease-in-out;
+}
+
+@keyframes wobble {
+	from {
+		transform: rotate(-.05turn);
+	}
+
+	to {
+		transform: rotate(.05turn);
+	}
+}
