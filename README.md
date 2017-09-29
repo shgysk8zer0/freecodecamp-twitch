@@ -1,5 +1,5 @@
 # freecodecamp-twitch
-FreeCodeCamp: Use the Twitchtv JSON API
+[FreeCodeCamp: Use the Twitchtv JSON API](https://codepen.io/shgysk8zer0/full/yzbmdy/)
 
 - - -
 [![license](https://img.shields.io/github/license/shgysk8zer0/freecodecamp-twitch.svg)](./LICENSE)
