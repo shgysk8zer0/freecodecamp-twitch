@@ -73,3 +73,15 @@ body {
 .color-inherit {
 	color: inherit;
 }
+
+.background-none {
+	background: none;
+}
+
+.border-none {
+	border: none;
+}
+
+button, [type="buton"] {
+	cursor: pointer;
+}
